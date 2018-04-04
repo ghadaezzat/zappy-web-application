@@ -36,7 +36,7 @@ var originsWhitelist = [
   app.use(bodyParser.json());
 
 //bot object from slack	
-const rtm = new RTMClient('xoxb-340882666630-YtS3j38xJEyidrT4CLpPDvR4');
+const rtm = new RTMClient('xoxb-340882666630-23k5gtirnhiX6mfAbVVnjTDz');
 
 rtm.start();
 
@@ -46,8 +46,6 @@ rtm.on('message', (event) => {
         if (pattern.test(event.text)) {
 
             add_to_database();
-         
-
         }
     }
 
