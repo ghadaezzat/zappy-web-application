@@ -1,4 +1,3 @@
-import { CustExtBrowserXhr } from './../../cust-ext-browser-xhr';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Provider } from '@angular/core';
@@ -7,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { DataService } from './data.service';
 import { HeaderComponent } from './header/header.component';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
