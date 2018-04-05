@@ -1,38 +1,23 @@
-# zappy-app
+ zappy-app
+------------
 
-the application fetches twitter messages from home page when one of the marketing team writes the word "go" in the slack channel zappy
+Zappy integrates with a Slack channel and listens on specific messages.
+the application fetches twitter feeds when one of the marketing team writes the word "go" in the slack channel zappy.
 
-
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
-
-Features
---------
-
-- Be awesome
-- Make things faster
 
 Installation
 ------------
 
-Install $project by running:
+Install Zappy by running:
 
     by running npm install
 
-Contribute
+Source code
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+- Source Code: https://github.com/ghadaezzat/zappy-web-application
 
-Support
--------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
 
 
 
