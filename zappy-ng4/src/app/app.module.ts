@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { DataService } from './data.service';
 import { HeaderComponent } from './header/header.component';
-
-import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
@@ -18,7 +16,6 @@ import { FooterComponent } from './footer/footer.component'
   imports: [
     BrowserModule,
     HttpModule,
-    HttpClientModule
   ],
   providers: [DataService,
   ],

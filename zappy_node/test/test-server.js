@@ -8,7 +8,9 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('./../app');
 const should = chai.should();
+const expect = chai.expect();
 
+const api =require('supertest');
 chai.use(chaiHttp);
 
 describe('tweets', function() {
@@ -18,7 +20,7 @@ describe('tweets', function() {
           .get('/view')
           .end(function(err, res){
             res.should.have.status(200);
-            done();
+            done(err);
           });
       });
   });

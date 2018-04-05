@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const twit = require('twitter');
 const twitter_api = require('./twitter.js');
+const slack_api=require('./slack.js');
 //object of a post
 const Post = require('./models/tweets');
 
@@ -13,10 +14,7 @@ const CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
 const cors = require('cors')
 
 
- //test if server is on
-app.get('/', function (req, res) {1
-    res.send("hello world");
-});
+
 
 //added cors
 var originsWhitelist = [
@@ -36,25 +34,44 @@ var originsWhitelist = [
   app.use(bodyParser.json());
 
 //bot object from slack	
-const rtm = new RTMClient('xoxb-340882666630-K2XAr6xDrDcoEyxLYtHTOeKf');
+const rtm = new RTMClient(slack_api.API_TOKEN);
 
 rtm.start();
+
+
+//connect to mlab - mongo database online
+mongoose.connect('mongodb://ghada:123456@ds231529.mlab.com:31529/zappy')
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
+//connect to twitter api 
+twitter = new twit({
+    consumer_key: twitter_api.CONSUMER_KEY,
+    consumer_secret: twitter_api.CONSUMER_SECRET,
+    access_token_key: twitter_api.ACCESS_TOKEN_KEY,
+    access_token_secret: twitter_api.ACCESS_TOKEN_SECRET
+});
+
+
+ //test if server is on
+ app.get('/', function (req, res) {1
+    res.send("hello world");
+});
+
 
 rtm.on('message', (event) => {
     if (event.text) {
         let pattern = new RegExp(/\bgo\b/);
-        if (pattern.test(event.text)) {
+       if (pattern.test(event.text)) {
 
             add_to_database();
         }
-    }
+   }
 
 });
 
 //db connection      
-mongoose.connect('mongodb://ghada:123456@ds231529.mlab.com:31529/zappy')
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+
 
 
 //fetch  tweets from database
@@ -62,8 +79,10 @@ app.get('/view',(req,res)=>{
     Post.find({},(err,docs)=>{
     if(err){
         res.json(err);
+        console.log(res.json(err));
     }else{
         res.json(docs);
+        console.log(res.json(docs));
     }
     });
 });
@@ -73,13 +92,8 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
 
-//connect to twitter
-twitter = new twit({
-    consumer_key: twitter_api.CONSUMER_KEY,
-    consumer_secret: twitter_api.CONSUMER_SECRET,
-    access_token_key: twitter_api.ACCESS_TOKEN_KEY,
-    access_token_secret: twitter_api.ACCESS_TOKEN_SECRET
-});
+
+
 
 
 
