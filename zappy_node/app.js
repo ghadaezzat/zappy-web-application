@@ -58,7 +58,7 @@ twitter = new twit({
     res.send("hello world");
 });
 
-
+//on event message go twitter feeds will be addded to database
 rtm.on('message', (event) => {
     if (event.text) {
         let pattern = new RegExp(/\bgo\b/);
@@ -70,7 +70,6 @@ rtm.on('message', (event) => {
 
 });
 
-//db connection      
 
 
 
@@ -101,8 +100,7 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 function add_to_database() {
     twitter.get('statuses/user_timeline', {
-        screen_name: 'dodo_ezzat',
-        count: 1
+        screen_name: 'FoneFiction'
     }, function (error, tweets, response) {
 
         if (error) {
