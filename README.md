@@ -7,7 +7,8 @@ the application fetches twitter feeds when one of the marketing team writes the 
 Tools
 ------------
 
-nodejs as back-end and angular 4 as front-end for the application
+nodejs as back-end and angular 4 as front-end for the application.
+mocha and chai in unit testing.
 
 Installation
 ------------
@@ -20,7 +21,8 @@ then cd to zappy-ng4 and run
 then replace the API_TOKEN in zappy_node /slack.js
 by the following token:
 "xoxb-340882666630-amYfUVtOakDHil8kowFJz4jY"
-
+ the fictionfone account on twitter :https://twitter.com/FictionFone
+ the slack channel link : https://zappy-co.slack.com/messages/C9Z5XL9L2/team/UA0RYKLJJ/
 
 
 Source code
