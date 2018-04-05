@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "./node_modules/.bin/mocha --timeout 10000"
   },
   "author": "ghada ezzat",
   "license": "ISC",
   "dependencies": {
+    "@slack/client": "^4.1.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",

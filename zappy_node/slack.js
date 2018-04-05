@@ -1,5 +1,4 @@
 
 module.exports={
-    API_TOKEN:'',
-    //xoxb-340882666630-YkuYkOb4qzswm63unN4i9tYs
+    API_TOKEN:'xoxb-340882666630-PclW5SIpFraeZIqFI23HL2Wx',
 }
