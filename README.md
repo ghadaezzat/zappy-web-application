@@ -14,10 +14,10 @@ Installation
 ------------
 
 Install Zappy by :
- cd zappy_node and run
-     npm install
-then cd to zappy-ng4 and run 
+
+ cd to zappy-ng4 and run 
     npm install
+then ng serve
 then replace the API_TOKEN in zappy_node /slack.js
 by the following token:
 "xoxb-340882666630-amYfUVtOakDHil8kowFJz4jY"
@@ -27,7 +27,8 @@ by the following token:
 
 Source code
 ----------
-
+-nodejs backend is uploaded to 
+ "http://zappy-app.openode.io/"
 - Source Code: https://github.com/ghadaezzat/zappy-web-application
 
 

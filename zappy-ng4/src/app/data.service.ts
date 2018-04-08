@@ -9,7 +9,7 @@ export class DataService {
   constructor(private _http:Http) { }
 
   getPosts() {
-    return this._http.get("http://localhost:5000/view")
+    return this._http.get("http://zappy-app.openode.io/view")
       .map(result => this.result = result.json());
   }
 }
